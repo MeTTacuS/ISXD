@@ -1,0 +1,41 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\selectlanguage *{lithuanian}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Anotacija}{2}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Įvadas}{4}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.}Panaudotų dokumentų sąrašas}{5}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.}Kompiuterizuojamo objekto anazilė}{6}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.}Kompiuterizuojamo verslo objekto apibūdinimas}{7}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.}IS konteksto diagrama. IS išoriniai informacijos srautai}{8}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.}IS galimybių medis}{9}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.4.}IS užduotys}{10}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.5.}Informacijos apdorojimo procesai}{11}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.6.}IS saugoma informacija (saugyklos)}{12}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.7.}IS vartotojai ir jų darbo vietos}{13}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.8.}IS inžinieriaus požiūris. Užpildoma antra 1 lentelės eilutė}{14}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.9.}Sudaromas IS posistemių sąrašas ir nurodomi jų tipai}{15}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.10.}IS registrų sistema}{16}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.}Pastabos apie dokumentą DĖL VALSTYBĖS INFORMACINIŲ SISTEMŲ GYVAVIMO CIKLO VALDYMO METODIKOS PATVIRTINIMO}{17}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.}Išvados}{18}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Terminų žodynėlis}{19}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.}Priedai}{20}{}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.}Pavyzdiniai latexo dalykai, nes dažnai pamirštu}{21}{}%
