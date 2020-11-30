@@ -13,6 +13,7 @@
 \usepackage{subfig}
 \usepackage{wrapfig}
 
+
 \usepackage{enumitem}
 %PAKEISTA, tarpai tarp sąrašo elementų
 \setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
@@ -21,11 +22,11 @@
 % Titulinio aprašas
 \university{Vilniaus universitetas}
 \faculty{Matematikos ir informatikos fakultetas}
-\department{Programų sistemų katedra}
-\papertype{Programų kūrimo proceso laboratorinis darbas}
-\title{Žaidimų pristatymų įmonės informacinės sistemaos}
-\titleineng{Description of the development process of the "Another One" company}
-\status{4 kurso studentai}
+\department{}
+\papertype{Informacinių sistemų pirmas laboratorinis darbas}
+\title{Žaidimų pristatymų „Another One" įmonės informacinė sistema ir jos analizė}
+\titleineng{}
+\status{Programų sistemų 4 kurso studentai}
 \author{Nedas Valentinovičius, Linas Valiukonis}
 \supervisor{Audronė Lupeikienė, M. Darbuot., Dr.}
 \date{Vilnius – \the\year}
@@ -33,6 +34,8 @@
 % Nustatymai
 %\setmainfont{Palemonas}
 % \bibliography{bibliografija}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\newcommand{\tabitemd}{~~\llap{\textopenbullet}~~}
 
 \begin{document}
 	
@@ -46,11 +49,16 @@ Komandos nariai ir jų kontaktiniai duomenys:
 	\item Linas Valiukonis, paštas: linas.valiukonis@mif.stud.vu.lt
 	\item Nedas Valentinoviičus, paštas: nedas.valentinovičius@mif.stud.vu.lt
 \end{itemize}
+Grupės narių indėliai:
+\begin {itemize}
+	\item Linas Valiukonis - 50\%
+	\item Nedas Valentinovičius - 50\%
+\end{itemize}
 
 \tableofcontents
 
 \sectionnonum{Įvadas}
-DUDE I DO NOT GIVE A SINGLE FLYING FUCK ABOUT THIS
+Šiame dokumente yra pateikiamas žaidimų pristatymo „Another One" įmonės informacinės sistemos aprašas. Egzistuojančio verslo pavyzdys galėtų būti bet kokia internetinė parduotuvė vykdanti užsakymus. Mūsų paslaugomos skelbiamos mūsų internetinėje svetainėje, taip pat reklamos kituose tinklalapiuose. Mes pristatom klientams jų prekes, sudarom sutartis su kitomis įmonėmis, kad jos galėtų naudotis mūsų sukurtu įrankiu (internetiniu puslapiu).
 
 \section{Panaudotų dokumentų sąrašas}
 
@@ -68,6 +76,40 @@ DUDE I DO NOT GIVE A SINGLE FLYING FUCK ABOUT THIS
 \newpage
 \subsection{Kompiuterizuojamo verslo objekto apibūdinimas}
 Žaidimų pristatymo įmonės verslo sistema pristato klientų įgytas prekias jiems fizižkai ar virtualiai. Paslaugos yra reklamuojamos internetinėje įmonės svetainėje. Sudaromos sutartys su kitomis įmonėmis, kurios nori pasinaudoti mūsų sistema ir išplatinti jų produktus.
+\begin{center}
+\begin{table}[ht]
+\centering
+	\caption{Kokybės užtikrinimo procesas}
+	\begin{tabular}{| p{0.1\linewidth} | p{0.9\linewidth }|} 
+	\hline
+	Kodėl  & Verslo strategija - auginti klientų lojalumą, trumpinti pristatymo laikus, vykdyti apmokymus darbuotojams.\\ 
+		&\\
+		& Verslo vizija - įmonė turėdama lojalių klientų, augina paslaugų ir parduodamų prekių kiekį, išlaiko klientų bazė rinkoje. \\
+		&\\
+		& SWOT analizė: \\
+		&\hspace{4mm}\tabitem Stiprybės: \\ 
+		&\hspace{8mm}\tabitemd didelis prekių pasirinkimas, \\
+		&\hspace{8mm}\tabitemd klientas gali iškart gauti prekę. \\
+		&\hspace{4mm}\tabitem Silpnybės: \\
+		&\hspace{8mm}\tabitemd mažas darbuotojų skaičius, aukštas klientų skaičius (švenčių laikotarpiu), \\
+		&\hspace{8mm}\tabitemd planavimo sunkumai su atvykstančiomis prekėmis, nežinomas prekių kiekis sandelyje (nėra galimybės greitai patikrinti). \\
+		&\hspace{4mm}\tabitem Galimybės: \\
+		&\hspace{8mm}\tabitemd kompiuterizuota sistema padėtų valdyti atvykstančias prekes bei suteiktu klientams galimybę užsisakyti internetu, \\
+		&\hspace{8mm}\tabitemd pasasmdžius daugiau darbuotojų būtų aptarnaujama daugiau klientų vienu metu, padidėtų produktyvumas ir pelnas. \\
+		&\hspace{4mm}\tabitem Rizikos: \\
+		&\hspace{8mm}\tabitemd augant darbuotojų skaičiui bus sunkiau kokybiškai juos visus apmokyti, \\
+		&\hspace{8mm}\tabitemd verslas bankrutuos jei bus pandemija. \\ \hline
+	Kaip 	&  Verslo transakcijos: produkto užsakymo priėmimas, apmokėjimas už produktą, produktų pirkimas, produktų atvežimas. \\ \hline
+	Kas 	& Verlslo objektai: produktai (žaidimai, žaidimų konsolės, įranga ir kt.), klientai, darbuotojai, pinigai, banko kortelės, transporto priemonės. \\ \hline
+	Kam 	& Suinteresuotieji asmenys: klientai, darbuotojai, užsakovai (iš kurių gauname produktus). \\ \hline
+	Kur 	& Prieigos taškai: \\
+		&\hspace{4mm}\tabitem įmonės parduotuvė - klientai perka gyvai.\\ 
+		&\hspace{4mm}\tabitem įmonės biuras - įmonės direktorius arba administratorius registruoja atvykstančius produktus į lokalius failus (kiek kokių produktų atvyko siunta). \\ \hline
+	Kada 	& Laiko apribojimai: klientai perka jau esamas prekes. Užsakymai iš tiekėjų yra įrašomi į lokalius failus su numatyta atvežimo data ir laiku bei užsakymo pradžios laiku\\ \hline																				
+	\end{tabular}
+\end{table}	
+\end{center}
+\newpage
 \begin{itemize}
 	\item Motyvacija
 	\item Verlslo objektai: produktai (žaidimai, žaidimų konsolės, įranga ir kt.), klientai, pinigai, banko kortelės.
