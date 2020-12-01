@@ -64,8 +64,6 @@ Grupės narių indėliai:
 \sectionnonum{Įvadas}
 Šiame dokumente yra pateikiamas žaidimų pristatymo „Another One" įmonės informacinės sistemos (toliau IS) aprašas. Egzistuojančio verslo pavyzdys galėtų būti bet kokia internetinė parduotuvė vykdanti užsakymus. Mūsų paslaugomos skelbiamos mūsų internetinėje svetainėje, taip pat reklamos kituose tinklalapiuose. Mes pristatom klientams jų prekes, sudarom sutartis su kitomis įmonėmis, kad jos galėtų naudotis mūsų sukurtu įrankiu (internetiniu puslapiu).
 
-\section{Panaudotų dokumentų sąrašas}
-
 %\begin{figure}[H]
 %    \centering
 %    \includegraphics[scale=0.8]{img/Procesudiagrama}
@@ -75,11 +73,9 @@ Grupės narių indėliai:
 
 
 \newpage
-\section{Kompiuterizuojamo objekto anazilė}
-
-\newpage
+\section{Kompiuterizuojamo objekto analizė}
 \subsection{Kompiuterizuojamo verslo objekto apibūdinimas}
-Žaidimų pristatymo įmonės „Another One" verslo sistema pristato klientų įgytas prekias jiems fizižkai ar virtualiai. Paslaugos yra reklamuojamos internetinėje įmonės svetainėje. Sudaromos sutartys su kitomis įmonėmis, kurios nori pasinaudoti mūsų sistema ir išplatinti jų produktus.
+Žaidimų pristatymo įmonės „Another One" verslo sistema pristato klientų įgytas prekes jiems fizižkai ar virtualiai. Paslaugos yra reklamuojamos internetinėje įmonės svetainėje. Sudaromos sutartys su kitomis įmonėmis, kurios nori pasinaudoti mūsų sistema ir išplatinti jų produktus.
 \begin{center}
 \begin{table}[ht]
 \centering
@@ -198,11 +194,11 @@ Sistema turi:
 
 \newpage
 \subsection{IS užduotys}
-Šiame skyriuje bus išnagrinėtos verslo užduotys iš \ref{img:UC} diagramos ir iš jų bus sudaromos IS užduotys.
+Šiame skyriuje bus išnagrinėtos verslo užduotys pasitelkus \ref{img:UC}-čią diagramą ir iš jų bus sudaromos IS užduotys.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=1]{img/UseCase}
-    \caption{Verslo užduoių diagrama}
+    \caption{Verslo užduočių diagrama}
     \label{img:UC}
 \end{figure}
 
@@ -268,18 +264,136 @@ Duomenis galima atvaizduoti kompiuterio ekrane.
 
 \newpage
 \subsection{Informacijos apdorojimo procesai}
+Pagrindiniai procesai, kuriuose bus bus apdorojama ir tvarkoma įvairi informacija:
+\begin{enumerate}
+    \item Užsisakymo procesas, matomas diagramoje Nr. \ref{img:uzsakymas}. 
+    \item Darbuotojų priskyrimo procesas, matomas diagramoje Nr. \ref{img:priskyrimas}.
+    \item Pristatymo procesas, matomas diagramoje Nr. \ref{img:pristatymas}.
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{img/uzsakymas}
+    \caption{Pirmo lygmens duomenų srautų diagrama (Užsakymo procesas)}
+    \label{img:uzsakymas}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{img/priskyrimas}
+    \caption{Pirmo lygmens duomenų srautų diagrama (Priskyrimo procesas)}
+    \label{img:priskyrimas}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{img/pristatymas}
+    \caption{Pirmo lygmens duomenų srautų diagrama (Pristatymo procesas)}
+    \label{img:pristatymas}
+\end{figure}
+
 
 \newpage
 \subsection{IS vartotojai ir jų darbo vietos}
+Šiame skyriuje aptariami informacinės sistemos vartotojai bei jiem skiriamos darbo vietos, nustatomi sąveikos protokolai. Informacinės sistemos naudotojai yra:
+\begin{itemize}
+    \item Klientas
+    \item Parduotuvės darbuotojas
+    \item Vadovas
+\end{itemize}
+
+Klientas naudojasi informacinės sistemos teikiamomis paslaugomis nueidamas į fizinę parduotuvę arba naudodamasis internetine svetaine. Abiejose vietose randama visa informacija apie teikiamą produkciją, kainas bei terminus. Klientui pateikiama informacija tik skaitymui, jis jos modifikuoti negali. Sąveikos protokolas - klientai sąveikauja su sistema per internetinę parduotuvę ar fizinės parduotuvės darbuotojus.
+
+Parduotuvės darbuotojas informacinę sistemą pasiekia prisijungdamas prie savo paskyros internetinėje svetainėje. Prisijungus jam yra suteikiama daugiau teisių priklausomai nuo to, kokios yra darbuotojo pareigos. Taip nuo darbuotojo pareigų priklauso, kuriuos informacinėje sistemoje saugomus duomenis jis galės modifikuoti, o kuriuos tik peržiūrėti. Sąveikos protokolas - didesnis nei klientui galimas priėjimas prie sistemos galimas prisijungus prie internetinės svetainės su savo (darbuotojo) prisijungimo duomenimis.
+
+Vadovas turi visas teises informacinėje sistemoje ir jas įgauna prisijunkdamas prie internetinės svetainės su savo prisijungimu arba gyvai stebėdamas užsakymų įrašus. Jis gali matyti visus informacinės sistemos duomenis, tačiau negali redaguoti tokių dalykų kaip užsakymų, vartotojų duomenų ir panašiai.  Sąveikos protokolas - prisijungiant prie informacinės sistemos su savo prisijungimo duomenimis.
+
+Visi sąveikos protokolai yra asinchroniniai - vieniems vartotojams nereikia laukti, kol kiti vartotojai pabaigs savo veiksmus, kad galėtų naudotis informacine sistema.
 
 \newpage
-\subsection{IS inžinieriaus požiūris. Užpildoma antra 1 lentelės eilutė}
+\subsection{IS inžinieriaus požiūris}
+\begin{center}
+\begin{table}[ht]
+\centering
+	\caption{II 1-os lentelės dalis}
+	\begin{tabular}{| p{0.1\linewidth} | p{0.9\linewidth }|} 
+	\hline
+	Kodėl  & Informacinės sistemos vizija:\\
+            &    Informacinė sistema yra skirta Vilniaus miesto gyventojams pirkti produkcija gyvai bei visiems Lietuvos gyventojams ją galėti užsisakyti į namus. Tai užsakymų priėmimo, apdorojimo ir vykdymo sistema, kompiuterizuojanti šiuos veiksmus maksimaliam klientų bei darbuotojų patogumui. Ši sistema yra pranašesnė už dabartinį įmonės veikimą, nes iki šiol vykdytas rankinis, gyvas užsakymų priėmimas, darbuotojų bei užsakymų pristatymų tvarkymas leidžia atsirasti klaidoms visais etapais, o tai išsprendžiama sistemą kompiuterizuojant.\\
+             &   Formalizmo medis pateikiamas paveiksliuke Nr. 8 \\ \hline
+	Kaip 	& Informacinės sistemos užduotys pateikiamos Skyriuje 2.4 \\ \hline
+	Kas 	& Duomenys saugomi duomenų bazėse. Vartotojų duomenys saugomi tik jiems davus sutikimą. Detaliau apie tai rašoma skyriuje Nr. 2.5  \\ \hline
+	Kam 	& Informacinės sistemos vartotojų sąsaja ir sąveikos protokolai aprašomi skyriuje Nr. 2.7 \\ \hline
+	Kur 	& Informacinės sistemos vartotojų darbo vietos aprašomos skyriuje Nr. 2.7 \\ \hline
+	Kada 	& Laiko ribojimai, taikomi informacinei sistemai: \\
+		    &\hspace{4mm}\tabitem Užsakymo informacija įrašoma per 5 sekundes po operacijos grąžinant užsakymo būseną vartotojui \\
+		    &\hspace{4mm}\tabitem Sandėlyje turimos prekės turi būti pradedamos rodyti per daugiausiai 2 sekundes, papildomas prekes kraunant fone, nematant vartotojui \\
+		    &\hspace{4mm}\tabitem Užsakymo būsenos pakitimas turi būti matomas per daugiausiai 1 minutę \\
+		    &\hspace{4mm}\tabitem Pirkimų istorija turi būti parodoma per daugiausiai 5 sekundes \\
+		    &\hspace{4mm}\tabitem Darbų priskyrimas turi būti įvykdomas daugiausiai per 3 sekundes. Po priskyrimo darbuotojas savo paskyroje po minėtų 3-jų sekundžių turi matyt detalią darbų informaciją, pateikta skirstant darbus. \\
+		    &\hspace{4mm}\tabitem Informacija apie laisvus tiekėjus turi būti pateikiama ne daugiau nei per 5 sekundes kartu pridedant ir būda susisiekti su tiekėjais telefonu ar elektroniniu paštu \\
+		    &\hspace{4mm}\tabitem Kilus užsakymo pristatymo kliūtims, užsakovas turi būti informuojamas apie nesklandumus pakeičian būseną ne daugiau nei per minutė ir informuojant žinute ar elektroniniu laišku ne daugiau nei per 5 minutes \\ \hline
+\end{tabular}
+\end{table}	
+\end{center}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{img/fui}
+    \caption{Formalizmo medis}
+    \label{img:fui}
+\end{figure}
 
 \newpage
-\subsection{Sudaromas IS posistemių sąrašas ir nurodomi jų tipai}
+\subsection{IS posistemių sąrašas ir jų tipai}
+Informacinės sistemos posistemės yra (tipai skliausteliuose):
+\begin{itemize}
+    \item Kliento užsakymo tvarkymo sistema (sistema-įrankis)
+    \item Mokėjimo sistema (užklausų sistema)
+    \item Išteklių kontroliavimo sistema (nuolatinio informavimo sistema)
+    \item Logistikos kontroliavimo sistema (nuolatinio informavimo sistema)
+    \item Pranešimų siuntimo ir susisiekimo su klientu sistema (sistema-įrankis)
+\end{itemize}
 
 \newpage
 \subsection{IS registrų sistema}
+Kadangi informacinei sistemai užtenką sąveikavimo tik su vienu registru (kaip matoma skyriuje 2.5), užtenka vienos sistemos sąveikavimui su juo.
+
+Registro nuostatai:
+\begin{enumerate}
+    \item Kas registruojama
+    \begin{itemize}
+        \item Sistemos vartotojai
+        \item Užsakymai
+        \item Pristatymai
+        \item Vartotojų duomenys bei informacija apie juos
+    \end{itemize}
+    \item Registravimo tvarka
+    \begin{itemize}
+        \item Norint registruoti užsakymus, vartotojas turi būti užsiregistravęs sistemoje, kad jam būtų galima suteikti atitinkamas roles ir pagal jas reguliuoti, ką gali daryti vartotojas.
+        \item Vartotojų roles gali keisti tik sistemos vadovas
+    \end{itemize}
+    \item Duomenų tiekėjai 
+    \begin{itemize}
+        \item Visi sistemoje saugomi duomenys pateikiami vartotojų išskyrus vadovą ir pradinius darbuotojus - juos į sistemą įveda sistemą prižiūrintys darbuotojai.
+    \end{itemize}
+    \item Teisinės, metodinės, registravimo, techninės, aptarnavimo, modernizavimo, funkcijų vykdytojai
+    \begin{itemize}
+        \item Teisinės, techninės, aptarnavimo, metodinės, modernizavimo funkcijas atlieka sistemą palaikantys asmenys
+        \item Registravimo funkciją vykdo naudotojai.
+    \end{itemize}
+\end{enumerate}
+\bigbreak
+Registro procesai:
+\begin{enumerate}
+    \item Registro steigimas ir likvidavimas\\
+    Registrą steigia ir likviduoja programinę įrangą prižiūrintys asmenys vadovo paliepimu.
+    \item Teisinė ir metodinė registro priežiūra\\
+    Kadangi sistemoje potencialiai gali būti saugomi vartotojų duomenys, sistema buvo kuriama atsižvelgiant į su duomenų saugojimu susijusius teisinius reikalavimus, ypač atsižvelgiant į „GDRP“. Sistema sukurta taip, kad betkada būtų galima pilnai pašalinti vartotojų duomenis tik jiems to norint.
+    \item Duomenys registre \\
+    Įvedant naujus duomenis į registrą vistuomet pasirūpinama, kad įvedami duomenys yra korektiški ir atitinkantys tokių duomenų reikalavimus. Tai ypač svarbu žiūrint į asmeninių duomenų tikslumą, naujų užsakymų priėmimą ar rolių keitimą.
+    \item Aptarnavimas ir reorganizavimas\\
+    Regisstro aptarnavimą atlieka sistemą palaikantys asmenys. Vadovui iškėlus poreikį reorganizuoti registrą, sudaromas reorganizavimo planas atsižvelgiant į tuos pačius teisinius įgaliojimus, kai ir kuriant registrą.
+\end{enumerate}
 
 \newpage
 \section{Pastabos apie dokumentą DĖL VALSTYBĖS INFORMACINIŲ SISTEMŲ GYVAVIMO CIKLO VALDYMO METODIKOS PATVIRTINIMO}
@@ -287,45 +401,16 @@ Duomenis galima atvaizduoti kompiuterio ekrane.
 \newpage
 
 \section{Išvados}
+Kompiuterizuojant kompiuterinių žaidimų pardavimo sistemos „Another One“ informacinę sistemą buvo siekiama automatizuoti daug veiksmų, tuo metu atliekamų darbuotojų rankomis. Sukurta informacinė sistemą leidžia darbuotojams ir pirkėjams lengviau sekti užsakymus, žinoti jų būsenas, o darbuotojai gali aiškiai ir greitai pasiskirstyti darbais. Kadangi visa reikalinga informacija randama vienoje vietoje, visi sistemą naudojantys vartotojai visuomet žino, kas vyksta visoje sistemoje jei tik jiem tai matyt leidžia priskirtos rolės. Kompiuterizuota sistema leidžia lengviau vykdyti kasdienius veiksmus, planuoti pakeitimus ir efektyviau vykdyti užsakymus, taip sukurdama galimybes įmonei plėstis.
+
+\section{Panaudotų dokumentų sąrašas}
+\begin{enumerate}
+    \item ISlab1-aprasas2020Pvz.doc - reikalavimai šiam laboratoriniam darbui
+\end{enumerate}
 
 \newpage
 \sectionnonum{Terminų žodynėlis}
 \begin{itemize}
 	\item{Trikdžiai -- veikla ar procesus stabdantys veiksniai}
 \end{itemize}
-
-\section{Priedai}
-
-\newpage
-\section{Pavyzdiniai latexo dalykai, nes dažnai pamirštu}
-Citavimo pavyzdžiai: cituojamas vienas šaltinis \cite{PvzStraipsnLt}; cituojami
-keli šaltiniai \cite{PvzStraipsnEn, PvzKonfLt, PvzKonfEn, PvzKnygLt, PvzKnygEn,
-PvzElPubLt, PvzElPubEn, PvzMagistrLt, PvzPhdEn}.
-
-\begin{enumerate}
-	\item Pirmas elementas
-	\item Antras elementas
-\end{enumerate}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=0.5]{img/DomainModel}
-    \caption{Paveikslėlio pavyzdys}
-    \label{img:mlp}
-\end{figure}
-
-% tablesgenerator.com - converts calculators (e.g. excel) tables to LaTeX
-\begin{table}[H]\footnotesize
-  \centering
-  \caption{Lentelės pavyzdys}
-  {\begin{tabular}{|l|c|c|} \hline
-    Algoritmas & $\bar{x}$ & $\sigma^{2}$ \\
-    \hline
-    Algoritmas A  & 1.6335    & 0.5584       \\
-    Algoritmas B  & 1.7395    & 0.5647       \\
-    \hline
-  \end{tabular}}
-  \label{tab:table example}
-\end{table}
-
 \end{document}
