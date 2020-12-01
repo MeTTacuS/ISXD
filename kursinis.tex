@@ -34,8 +34,12 @@
 % Nustatymai
 %\setmainfont{Palemonas}
 % \bibliography{bibliografija}
+
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 \newcommand{\tabitemd}{~~\llap{\textopenbullet}~~}
+
+\renewcommand{\labelenumii}{\theenumii}
+\renewcommand{\theenumii}{\theenumi.\arabic{enumii}.}
 
 \begin{document}
 	
@@ -58,7 +62,7 @@ Grupės narių indėliai:
 \tableofcontents
 
 \sectionnonum{Įvadas}
-Šiame dokumente yra pateikiamas žaidimų pristatymo „Another One" įmonės informacinės sistemos aprašas. Egzistuojančio verslo pavyzdys galėtų būti bet kokia internetinė parduotuvė vykdanti užsakymus. Mūsų paslaugomos skelbiamos mūsų internetinėje svetainėje, taip pat reklamos kituose tinklalapiuose. Mes pristatom klientams jų prekes, sudarom sutartis su kitomis įmonėmis, kad jos galėtų naudotis mūsų sukurtu įrankiu (internetiniu puslapiu).
+Šiame dokumente yra pateikiamas žaidimų pristatymo „Another One" įmonės informacinės sistemos (toliau IS) aprašas. Egzistuojančio verslo pavyzdys galėtų būti bet kokia internetinė parduotuvė vykdanti užsakymus. Mūsų paslaugomos skelbiamos mūsų internetinėje svetainėje, taip pat reklamos kituose tinklalapiuose. Mes pristatom klientams jų prekes, sudarom sutartis su kitomis įmonėmis, kad jos galėtų naudotis mūsų sukurtu įrankiu (internetiniu puslapiu).
 
 \section{Panaudotų dokumentų sąrašas}
 
@@ -75,7 +79,7 @@ Grupės narių indėliai:
 
 \newpage
 \subsection{Kompiuterizuojamo verslo objekto apibūdinimas}
-Žaidimų pristatymo įmonės verslo sistema pristato klientų įgytas prekias jiems fizižkai ar virtualiai. Paslaugos yra reklamuojamos internetinėje įmonės svetainėje. Sudaromos sutartys su kitomis įmonėmis, kurios nori pasinaudoti mūsų sistema ir išplatinti jų produktus.
+Žaidimų pristatymo įmonės „Another One" verslo sistema pristato klientų įgytas prekias jiems fizižkai ar virtualiai. Paslaugos yra reklamuojamos internetinėje įmonės svetainėje. Sudaromos sutartys su kitomis įmonėmis, kurios nori pasinaudoti mūsų sistema ir išplatinti jų produktus.
 \begin{center}
 \begin{table}[ht]
 \centering
@@ -105,37 +109,165 @@ Grupės narių indėliai:
 	Kur 	& Prieigos taškai: \\
 		&\hspace{4mm}\tabitem įmonės parduotuvė - klientai perka gyvai.\\ 
 		&\hspace{4mm}\tabitem įmonės biuras - įmonės direktorius arba administratorius registruoja atvykstančius produktus į lokalius failus (kiek kokių produktų atvyko siunta). \\ \hline
-	Kada 	& Laiko apribojimai: klientai perka jau esamas prekes. Užsakymai iš tiekėjų yra įrašomi į lokalius failus su numatyta atvežimo data ir laiku bei užsakymo pradžios laiku\\ \hline																				
-	\end{tabular}
+	Kada 	& Laiko apribojimai: klientai perka jau esamas prekes. Užsakymai iš tiekėjų yra įrašomi į lokalius failus su numatyta atvežimo data ir laiku bei užsakymo pradžios laiku\\ \hline				\end{tabular}
 \end{table}	
 \end{center}
 \newpage
 \subsection{IS konteksto diagrama. IS išoriniai informacijos srautai}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=1]{img/KontekstoDiagrama}
+    \includegraphics[scale=1]{img/KontekstoDiagrama2}
     \caption{Konteksto diagrama}
     \label{img:mlp}
 \end{figure}
+Informacinės sistemos išorinių informacijos/duomenų srautų aprašai:
+\begin{enumerate}
+	\item Šaltinis - Klientas
+	\begin{enumerate}
+		\item Identifikatorius: ORD
+		\item Duomenų aprašymas: iš kliento tapatybė patvirtinantis dokumentas, užsakymo informacija. \\ Mūsų įmonė perduoda sąskaita bei užsakymo statusą.
+		\item Periodiškumas: kai klientas padaro užsakymą.
+		\item Duomenų formatas: skaitmeniniai dokumentai. 
+		\item Duomenų perdavimo būdas: elektroninis paštas.
+	\end{enumerate}
+	\item Šaltinis - Logistika
+	\begin{enumerate}
+		\item Identifikatorius: LGX
+		\item Duomenų aprašymas: už logistika atsakinga įmonė pateikia užsakymo sekimo informacija. \\ Mūsų įmonė perduoda kliento adresą bei siuntos informaciją.
+ 		\item Duomenų srauto apimtis (kiekis per dieną): vieną kartą.
+		\item Duomenų formatas: skaitmeniniai dokumentai, popieriniai dokumentai.
+		\item Duomenų perdavimo būdas: per internetą arba tiesioginiu būdu.
+	\end{enumerate}
+	\item Šaltinis - Išorinė įmonė
+	\begin{enumerate}
+		\item Identifikatorius: DL
+		\item Duomenų aprašymas: išorinė įmonė pateikia mums produktų informacija, kaip nori naudotis mūsų paslaugomis. \\ Mūsų įmonė perduoda paslaugų informacija.
+		\item Periodiškumas: kai abi pusės susitaria ir pasirašo sutartį.
+		\item Duomenų formatas: popieriniai dokumentai
+		\item Duomenų perdavimo būdas: tiesioginis
+	\end{enumerate}
+	\item Šaltinis - Tiekėjai
+	\begin{enumerate}
+		\item Identifikatorius: SUPP
+		\item Duomenų aprašymas: pateikia produktų informacija ir sąskaitą. \\ Mūsų įmonė pateikia užsakymo informacija.
+		\item Periodiškumas: pagal sutartį numatytą periodiškumą arba kai sudaroma sutartis.
+		\item Duomenų formatas: popieriniai dokumentai.
+		\item Duomenų perdavimo būdas: tiesioginis
+	\end{enumerate}
+	\item Šaltinis - Vadyba
+	\begin{enumerate}
+		\item Identifikatorius: MNG
+		\item Duomenų aprašymas: perduoda nurodymus, kuriuos užsakymus vykdyti, įrašus kada kokios siuntos atvyks. \\ Mūsų įmonė perduoda siuntų ataskaitas.
+ 		\item Duomenų srauto apimtis (kiekis per dieną): iki 3~5 kartų
+		\item Duomenų formatas: skaitmeniniai dokumentai.
+		\item Duomenų perdavimo būdas: internetinės operacijos.
+	\end{enumerate}
+	\item Šaltinis - Darbuotojai
+	\begin{enumerate}
+		\item Identifikatorius: WKR
+		\item Duomenų aprašymas: atnaujinta informacija apie užsakymą, laikas ir pastabos apie užsakymą. \\ Mūsų įmonė perduoda užsakymų katalogą bei nurodymus iš vadybos.
+ 		\item Duomenų srauto apimtis (kiekis per valandą): apie 12
+		\item Duomenų formatas: skaitmeniniai dokumentai arba popieriniai dokumentai.
+		\item Duomenų perdavimo būdas: internetinės užklausos, tiesioginis.
+	\end{enumerate}
+\end{enumerate}
 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=1]{img/KontekstoDuomenuSrautoDiagrama}
-    \caption{Konteksto duomenų srauto diagrama}
-    \label{img:mlp}
-\end{figure}
 \newpage
 \subsection{IS galimybių medis}
+Sistema turi:
+\begin{enumerate}
+	\item Pateikti produktų sąrašą.
+	\item Priimti ir išsaugoti klientų užsakymus.
+	\item Pateikti klientui užsakymo anksčiausia atvykimo laiką.
+	\item Apskaičiuoti užsakymo kainą.
+	\item Užregistruoti užregistruoti, kai klientas sumoką už užsakymą.
+	\item Pateikti darbuotojų sąrašą.
+	\item Leisti redaguoti darbuotojų sąrašą.
+	\item Pateikti užsakymų katalogą.
+	\item Leisti redaguoti užsakymų katalogą.
+	\item Pateikti produktų katalogą.
+	\item Leisti redaguoti produktų katalogą.
+	\item Leisti skelbti akcijas ir naujienas.
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{img/GalimybiuMedis}
+    \caption{Galimybių medis}
+    \label{img:mlp}
+\end{figure}
 
 \newpage
 \subsection{IS užduotys}
+Šiame skyriuje bus išnagrinėtos verslo užduotys iš \ref{img:UC} diagramos ir iš jų bus sudaromos IS užduotys.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/UseCase}
+    \caption{Verslo užduoių diagrama}
+    \label{img:UC}
+\end{figure}
 
-\newpage
-\subsection{Informacijos apdorojimo procesai}
+\begin{enumerate}
+	\item Peržiūrėti produktus
+	\begin{enumerate}
+		\item Procesai: atvykti į fizinę parduotuvę/apsilankyti internetiniame puslapyje, peržiūrėti produktus ir jų informacija.
+		\item Produkto naudojimo atvejis: produktų katalogo pateikimas.
+	\end{enumerate}
+	\item Padaryti užsakymą
+	\begin{enumerate}
+		\item Procesai: atvykti į fizinę parduotuvę/apsilankyti internetinėje svetainėje, peržiūrėti produktus, išsirinkti norimus produktus, pateikti reikalinga informaciją reikalingą užsakymo sukūrimui, apmokėti, užregistruoti užsakymą į užsakymų katalogą.
+		\item Produkto naudojimo atvejis: produktų katalogo pateikimas, užsakymo sukūrimas, užsakymo apmokėjimas, užsakymo įrašymas į užsakymų katalogą.
+	\end{enumerate}
+	\item Apmokėti
+	\begin{enumerate}
+		\item Procesai: apmokėti už produktą fizinėje parduotuvėje banko kortele/grynais arba internetu per elektroninę bankininkystę.
+		\item Produkto naudojimo atvejis: apmokėjimo atlikimas.
+	\end{enumerate}
+	\item Paruošti užsakymą
+	\begin{enumerate}
+		\item Procesai: peržiūrėti užsakymų katalogą, supakuoti užsakymą pristatymui, pakeisti užsakymo statusą užsakymų kataloge.
+		\item Produkto naudojimo atvejis: Užsakymo katalogo pateikimas, užsakymo katalogo pakeitimas.
+	\end{enumerate}
+	\item Pristatyti užsakymą
+	\begin{enumerate}
+		\item Procesai: peržiūrėti užsakymų katalogą, paimti užsakymą, pristatyti užsakymą, pakeisti užsakymo statusą užsakymų kataloge.
+		\item Produkto naudojimo atvejis: Užsakymo katalogo pateikimas, užsakymo katologo pakeitimas, pranešimo, apie siuntos pristatymą, išsiuntimas.
+	\end{enumerate}
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/ProductUseCase1}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/ProductUseCase2}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/ProductUseCase3}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/ProductUseCase4}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/ProductUseCase5}
+\end{figure}
 
 \newpage
 \subsection{IS saugoma informacija (saugyklos)}
+Esminių esybių (vartotojai, darbuotojai, užsakymai ir produktai) duomenys bus saugomi SQL duomenų bazėje. Ryšiai tarp esybių matomi \ref{img:RS} diagramoje. „User" lentelėje saugomi duomenys apie vartotoją (vardas, kontaktiniai duomenys). „Order" lentelėje saugmi duomenys apie užsakymus (kas užsakė, kas paruošė užsakymą, kokie produktai įeina į užsakymą ir kt.). „Worker" lentelėje saugomi duomenys apie darbuotojus (darbuotojo vardas, kontaktiniai duomenys, darbuotojo ID). „Product" lentelėje saugoma informacija apie produktus. \\
+Duomenis galima atvaizduoti kompiuterio ekrane.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=1]{img/RealiacineSchema}
+    \caption{Esminių esybių reliacinė schema}
+    \label{img:RS}
+\end{figure}
+
+\newpage
+\subsection{Informacijos apdorojimo procesai}
 
 \newpage
 \subsection{IS vartotojai ir jų darbo vietos}
